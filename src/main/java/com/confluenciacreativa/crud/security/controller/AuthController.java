@@ -79,7 +79,7 @@ public class AuthController {
     public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUsuario loginUsuario,
                                         BindingResult bindingResult){
         if(bindingResult.hasErrors())
-            return new ResponseEntity(new Mensaje("Campos mal puesto"),
+            return new ResponseEntity(new Mensaje("Error en los datos ingresados"),
                     HttpStatus.BAD_REQUEST);
         Authentication authentication =
                 authenticationManager.authenticate(
